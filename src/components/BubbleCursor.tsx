@@ -63,13 +63,13 @@ export function BubbleCursor() {
 
   return (
     <>
-      <motion.div
-        className="fixed pointer-events-none z-[9999]"
-        animate={{
-          x: position.x - 12,
-          y: position.y - 12,
-          opacity: isVisible ? 1 : 0,
-        }}
+        <motion.div
+          className="fixed top-0 left-0 pointer-events-none z-[9999]"
+          animate={{
+            x: position.x - 12,
+            y: position.y - 12,
+            opacity: isVisible ? 1 : 0,
+          }}
         transition={{
           type: "spring",
           stiffness: 500,
@@ -82,9 +82,9 @@ export function BubbleCursor() {
 
       <AnimatePresence>
         {pops.map((pop) => (
-          <motion.div
-            key={pop.id}
-            className="fixed pointer-events-none z-[9998]"
+            <motion.div
+              key={pop.id}
+              className="fixed top-0 left-0 pointer-events-none z-[9998]"
             initial={{
               x: pop.x - 12,
               y: pop.y - 12,
