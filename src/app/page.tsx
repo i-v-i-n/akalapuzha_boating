@@ -10,7 +10,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative bg-[#0a0f0d]">
+    <main className="relative bg-[#051923]">
       <Navigation />
       <HeroSection />
       <ExperienceSection />

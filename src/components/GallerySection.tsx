@@ -51,11 +51,14 @@ export function GallerySection() {
     <section
       ref={containerRef}
       id="gallery"
-      className="relative py-32 lg:py-48 bg-[#0a0f0d] overflow-hidden"
+      className="relative py-32 lg:py-48 bg-[#051923] overflow-hidden"
     >
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#111916] to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0a2a3d] to-transparent" />
       </div>
+      
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#00A8E8]/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-[#007EA7]/15 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
@@ -64,7 +67,7 @@ export function GallerySection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="inline-block text-[#c4a86c] text-xs tracking-[0.3em] uppercase mb-6"
+              className="inline-block text-[#00A8E8] text-xs tracking-[0.3em] uppercase mb-6"
             >
               Visual Journey
             </motion.span>
@@ -73,7 +76,7 @@ export function GallerySection() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-4xl md:text-5xl lg:text-7xl font-light text-[#f5f2eb]"
+              className="font-serif text-4xl md:text-5xl lg:text-7xl font-medium text-white"
             >
               Capture The <span className="text-gradient">Moments</span>
             </motion.h2>
@@ -83,7 +86,7 @@ export function GallerySection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[#8a9a8f] text-lg max-w-md lg:text-right"
+            className="text-[#7ab8d4] text-lg max-w-md lg:text-right"
           >
             Every frame tells a story of serenity, adventure, and the timeless beauty 
             of Kerala&apos;s backwaters.
@@ -97,18 +100,18 @@ export function GallerySection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.1 * index }}
-              className={`${image.span} relative overflow-hidden group cursor-pointer`}
+              className={`${image.span} relative overflow-hidden group cursor-pointer submerged-glow`}
             >
               <img
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#051923]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-[#f5f2eb] font-serif text-lg">{image.alt}</p>
+                <p className="text-white font-serif text-lg">{image.alt}</p>
               </div>
-              <div className="absolute inset-0 border border-[#c4a86c]/0 group-hover:border-[#c4a86c]/30 transition-colors duration-500" />
+              <div className="absolute inset-0 border border-[#00A8E8]/0 group-hover:border-[#00A8E8]/30 group-hover:shadow-[inset_0_0_30px_rgba(0,168,232,0.2)] transition-all duration-500" />
             </motion.div>
           ))}
         </motion.div>
@@ -122,7 +125,7 @@ export function GallerySection() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="px-10 py-4 border border-[#c4a86c] text-[#c4a86c] font-medium tracking-wider hover:bg-[#c4a86c] hover:text-[#0a0f0d] transition-all duration-300"
+            className="px-10 py-4 border border-[#00A8E8] text-[#00A8E8] font-medium tracking-wider hover:bg-[#00A8E8] hover:text-[#051923] hover:shadow-[0_0_30px_rgba(0,168,232,0.4)] transition-all duration-300"
           >
             View Full Gallery
           </motion.button>
