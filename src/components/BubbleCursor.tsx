@@ -15,6 +15,16 @@ export function BubbleCursor() {
   const [pops, setPops] = useState<BubblePop[]>([]);
 
   useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = "* { cursor: none !important; }";
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
@@ -53,12 +63,6 @@ export function BubbleCursor() {
 
   return (
     <>
-      <style jsx global>{`
-        * {
-          cursor: none !important;
-        }
-      `}</style>
-
       <motion.div
         className="fixed pointer-events-none z-[9999]"
         animate={{
