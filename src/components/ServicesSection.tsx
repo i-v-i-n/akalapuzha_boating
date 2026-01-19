@@ -216,20 +216,15 @@ export function ServicesSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-[#00A8E8] text-[#051923] font-medium tracking-wider hover:bg-[#CFFFFF] hover:shadow-[0_0_30px_rgba(0,168,232,0.4)] transition-all duration-300"
-              >
-                Book {activeData.name}
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 glass-card text-[#00A8E8] font-medium tracking-wider hover:border-[#00A8E8]/50 transition-all duration-300"
-              >
-                View Details
-              </motion.button>
+<motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+                  className="px-8 py-4 bg-[#00A8E8] text-[#051923] font-medium tracking-wider hover:bg-[#CFFFFF] hover:shadow-[0_0_30px_rgba(0,168,232,0.4)] transition-all duration-300"
+                >
+                  Book {activeData.name}
+                </motion.button>
+              
             </div>
           </div>
         </motion.div>

@@ -86,7 +86,7 @@ export function HeroSection() {
               transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg md:text-xl text-white/60 max-w-xl leading-relaxed mb-12"
             >
-              Experience the timeless beauty of Alappuzha&apos;s enchanting backwaters. 
+              Experience the timeless beauty of Akalappuzha&apos;s enchanting backwaters. 
               Glide through serene canals on traditional houseboats, shikaras, and more.
             </motion.p>
 
@@ -96,14 +96,15 @@ export function HeroSection() {
               transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="group px-8 py-4 bg-[#00A8E8] text-[#051923] font-medium tracking-wider flex items-center justify-center gap-3 hover:bg-[#CFFFFF] hover:shadow-[0_0_40px_rgba(0,168,232,0.5)] transition-all duration-300"
-              >
-                Explore Services
-                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-              </motion.button>
+<motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
+                  className="group px-8 py-4 bg-[#00A8E8] text-[#051923] font-medium tracking-wider flex items-center justify-center gap-3 hover:bg-[#CFFFFF] hover:shadow-[0_0_40px_rgba(0,168,232,0.5)] transition-all duration-300"
+                >
+                  Explore Services
+                  <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.02 }}
