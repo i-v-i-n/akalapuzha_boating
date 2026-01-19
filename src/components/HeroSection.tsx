@@ -36,11 +36,11 @@ export function HeroSection() {
       
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-[#007EA7]/20 via-transparent to-[#051923] z-10" />
-          <img
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
-            alt="Kerala Backwaters"
-            className="w-full h-full object-cover opacity-30"
-          />
+        <img
+          src="/houseboat.png"
+          alt="Kerala Backwaters"
+          className="w-full h-full object-cover opacity-30"
+        />
       </motion.div>
 
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00A8E8]/10 rounded-full blur-[150px] pointer-events-none" />
