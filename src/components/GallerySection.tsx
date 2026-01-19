@@ -1,44 +1,30 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
-const galleryImages = [
-  {
-    src: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop",
-    alt: "Kerala Backwaters at Sunset",
-    span: "col-span-2 row-span-2",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1593693411515-c20261bcad6e?q=80&w=1169&auto=format&fit=crop",
-    alt: "Traditional Shikara Boat",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop",
-    alt: "Luxury Houseboat",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop",
-    alt: "Scenic Waters",
-    span: "col-span-1 row-span-2",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?q=80&w=2070&auto=format&fit=crop",
-    alt: "Village Life",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=2044&auto=format&fit=crop",
-    alt: "Speedboat Adventure",
-    span: "col-span-1 row-span-1",
-  },
+const initialImages = [
+  { src: "/a1.png", alt: "Backwaters View", span: "col-span-2 row-span-2" },
+  { src: "/boats.png", alt: "Traditional Boats", span: "col-span-1 row-span-1" },
+  { src: "/canoe.png", alt: "Canoe Ride", span: "col-span-1 row-span-1" },
+  { src: "/canoe2.png", alt: "Canoe Adventure", span: "col-span-1 row-span-2" },
+  { src: "/houseboat.png", alt: "Houseboat", span: "col-span-1 row-span-1" },
+  { src: "/island.png", alt: "Island View", span: "col-span-1 row-span-1" },
+];
+
+const expandedImages = [
+  { src: "/kaayal.png", alt: "Kaayal Waters", span: "col-span-1 row-span-1" },
+  { src: "/piller.png", alt: "Heritage Pillar", span: "col-span-1 row-span-1" },
+  { src: "/road.png", alt: "Scenic Road", span: "col-span-1 row-span-1" },
+  { src: "/thoni.png", alt: "Traditional Thoni", span: "col-span-1 row-span-1" },
 ];
 
 export function GallerySection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const galleryImages = isExpanded ? [...initialImages, ...expandedImages] : initialImages;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -93,7 +79,7 @@ export function GallerySection() {
           </motion.p>
         </div>
 
-        <motion.div style={{ x }} className="grid grid-cols-3 grid-rows-3 gap-4 lg:gap-6">
+        <motion.div layout style={{ x }} className="grid grid-cols-3 gap-4 lg:gap-6">
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
@@ -122,13 +108,14 @@ export function GallerySection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex justify-center mt-16"
         >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-10 py-4 border border-[#00A8E8] text-[#00A8E8] font-medium tracking-wider hover:bg-[#00A8E8] hover:text-[#051923] hover:shadow-[0_0_30px_rgba(0,168,232,0.4)] transition-all duration-300"
-          >
-            View Full Gallery
-          </motion.button>
+<motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="px-10 py-4 border border-[#00A8E8] text-[#00A8E8] font-medium tracking-wider hover:bg-[#00A8E8] hover:text-[#051923] hover:shadow-[0_0_30px_rgba(0,168,232,0.4)] transition-all duration-300"
+            >
+              {isExpanded ? "Show Less" : "View Full Gallery"}
+            </motion.button>
         </motion.div>
       </div>
 
