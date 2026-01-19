@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
 
 const galleryImages = [
   {
@@ -36,9 +36,23 @@ const galleryImages = [
   },
 ];
 
+const expandedImages = [
+  { src: "/a1.png", alt: "Scenic View" },
+  { src: "/boats.png", alt: "Boats" },
+  { src: "/canoe.png", alt: "Canoe" },
+  { src: "/canoe2.png", alt: "Canoe Adventure" },
+  { src: "/houseboat.png", alt: "Houseboat" },
+  { src: "/island.png", alt: "Island" },
+  { src: "/kaayal.png", alt: "Kaayal" },
+  { src: "/piller.png", alt: "Piller" },
+  { src: "/road.png", alt: "Road" },
+  { src: "/thoni.png", alt: "Thoni" },
+];
+
 export function GallerySection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -116,20 +130,56 @@ export function GallerySection() {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex justify-center mt-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-10 py-4 border border-[#00A8E8] text-[#00A8E8] font-medium tracking-wider hover:bg-[#00A8E8] hover:text-[#051923] hover:shadow-[0_0_30px_rgba(0,168,232,0.4)] transition-all duration-300"
+<motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex justify-center mt-16"
           >
-            View Full Gallery
-          </motion.button>
-        </motion.div>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="px-10 py-4 border border-[#00A8E8] text-[#00A8E8] font-medium tracking-wider hover:bg-[#00A8E8] hover:text-[#051923] hover:shadow-[0_0_30px_rgba(0,168,232,0.4)] transition-all duration-300"
+            >
+              {isExpanded ? "Show Less" : "View Full Gallery"}
+            </motion.button>
+          </motion.div>
+
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.5 }}
+                className="overflow-hidden mt-12"
+              >
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {expandedImages.map((image, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.05 * index }}
+                      className="relative aspect-square overflow-hidden group cursor-pointer submerged-glow"
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#051923]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        <p className="text-white font-serif text-sm">{image.alt}</p>
+                      </div>
+                      <div className="absolute inset-0 border border-[#00A8E8]/0 group-hover:border-[#00A8E8]/30 group-hover:shadow-[inset_0_0_30px_rgba(0,168,232,0.2)] transition-all duration-500" />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
       </div>
 
       <motion.div

@@ -17,7 +17,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Finishing Point, Alappuzha, Kerala 688012",
+    value: "Finishing Point, Akalappuzha, Kerala 688012",
   },
   {
     icon: Phone,
