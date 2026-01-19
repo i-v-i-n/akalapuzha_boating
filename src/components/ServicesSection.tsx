@@ -48,8 +48,18 @@ const services = [
 
 export function ServicesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const detailsRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
   const [activeService, setActiveService] = useState<string>("houseboat");
+
+  const handleServiceClick = (serviceId: string) => {
+    setActiveService(serviceId);
+    if (window.innerWidth < 1024) {
+      setTimeout(() => {
+        detailsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  };
 
   const activeData = services.find((s) => s.id === activeService) || services[0];
 
@@ -104,7 +114,7 @@ export function ServicesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              onClick={() => setActiveService(service.id)}
+              onClick={() => handleServiceClick(service.id)}
               className={`group flex-1 p-6 lg:p-8 text-left transition-all duration-500 ${
                 activeService === service.id
                   ? "glass-card border-[#00A8E8]/50 shadow-[0_0_30px_rgba(0,168,232,0.2)]"
@@ -136,8 +146,9 @@ export function ServicesSection() {
           ))}
         </div>
 
-        <motion.div
-          key={activeService}
+<motion.div
+            ref={detailsRef}
+            key={activeService}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
