@@ -52,11 +52,11 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#051923]/80 via-transparent to-[#051923]/60" />
       </div>
 
-      <motion.div
-        style={{ opacity }}
-        className="relative z-30 min-h-screen flex items-center"
-      >
-<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
+        <motion.div
+          style={{ opacity }}
+          className="relative z-30 min-h-screen flex items-center"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
             <div className="max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
@@ -73,7 +73,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-medium leading-[0.9] text-white mb-6 sm:mb-8"
+                className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-medium leading-[0.9] text-white mb-4 sm:mb-8"
               >
                 Drift Into
                 <br />
@@ -100,7 +100,7 @@ export function HeroSection() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
-                    className="group px-6 sm:px-8 py-3 sm:py-4 bg-[#00A8E8] text-[#051923] font-medium tracking-wider flex items-center justify-center gap-3 hover:bg-[#CFFFFF] hover:shadow-[0_0_40px_rgba(0,168,232,0.5)] transition-all duration-300 text-sm sm:text-base"
+                    className="group px-6 sm:px-8 py-3 sm:py-4 bg-[#00A8E8] text-[#051923] text-sm sm:text-base font-medium tracking-wider flex items-center justify-center gap-3 hover:bg-[#CFFFFF] hover:shadow-[0_0_40px_rgba(0,168,232,0.5)] transition-all duration-300"
                   >
                     Explore Services
                     <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -109,7 +109,7 @@ export function HeroSection() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group px-6 sm:px-8 py-3 sm:py-4 glass-card text-white font-medium tracking-wider flex items-center justify-center gap-3 hover:border-[#00A8E8]/50 transition-all duration-300 text-sm sm:text-base"
+                  className="group px-6 sm:px-8 py-3 sm:py-4 glass-card text-white text-sm sm:text-base font-medium tracking-wider flex items-center justify-center gap-3 hover:border-[#00A8E8]/50 transition-all duration-300"
                 >
                   <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full border border-[#00A8E8]/50 flex items-center justify-center group-hover:border-[#CFFFFF] group-hover:shadow-[0_0_20px_rgba(0,168,232,0.3)] transition-all duration-300">
                     <Play className="w-3 sm:w-4 h-3 sm:h-4 ml-0.5 text-[#00A8E8]" />
@@ -135,12 +135,12 @@ export function HeroSection() {
         </motion.div>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30"
-      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-30"
+        >
         <motion.button
           onClick={scrollToExperience}
           animate={{ y: [0, 10, 0] }}
