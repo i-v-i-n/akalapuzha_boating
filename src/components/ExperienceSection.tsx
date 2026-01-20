@@ -27,15 +27,15 @@ export function ExperienceSection() {
     <section
       ref={containerRef}
       id="experience"
-      className="relative py-16 sm:py-24 lg:py-48 bg-[#051923] overflow-hidden"
+      className="relative py-32 lg:py-48 bg-[#051923] overflow-hidden"
     >
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/4 left-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[#00A8E8]/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[#007EA7]/20 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00A8E8]/20 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#007EA7]/20 rounded-full blur-[100px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <motion.div
             style={{ y: y1 }}
             className="relative"
@@ -58,7 +58,7 @@ export function ExperienceSection() {
               initial={{ opacity: 0, x: 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute -bottom-4 sm:-bottom-8 -right-2 sm:-right-8 lg:-right-16 w-32 sm:w-48 lg:w-64 aspect-square overflow-hidden border-4 sm:border-8 border-[#051923] submerged-glow"
+              className="absolute -bottom-8 -right-8 lg:-right-16 w-48 lg:w-64 aspect-square overflow-hidden border-8 border-[#051923] submerged-glow"
             >
               <img
                 src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?q=80&w=1169&auto=format&fit=crop"
@@ -71,15 +71,15 @@ export function ExperienceSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute -top-4 sm:-top-8 -left-2 sm:-left-4 lg:-left-8 p-3 sm:p-6 glass-card"
+              className="absolute -top-8 -left-4 lg:-left-8 p-6 glass-card"
             >
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-[#00A8E8]/20 flex items-center justify-center">
-                  <Compass className="w-5 sm:w-6 h-5 sm:h-6 text-[#00A8E8]" />
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#00A8E8]/20 flex items-center justify-center">
+                  <Compass className="w-6 h-6 text-[#00A8E8]" />
                 </div>
                 <div>
-                  <p className="text-xl sm:text-2xl font-serif text-white">Since 1998</p>
-                  <p className="text-[10px] sm:text-xs text-[#7ab8d4] tracking-wider uppercase">Trusted Service</p>
+                  <p className="text-2xl font-serif text-white">Since 1998</p>
+                  <p className="text-xs text-[#7ab8d4] tracking-wider uppercase">Trusted Service</p>
                 </div>
               </div>
             </motion.div>
@@ -99,7 +99,7 @@ export function ExperienceSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight mb-4 sm:mb-8"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight mb-8"
             >
               Where Nature Meets
               <br />
@@ -110,7 +110,7 @@ export function ExperienceSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[#7ab8d4] text-base sm:text-lg leading-relaxed mb-4 sm:mb-8"
+              className="text-[#7ab8d4] text-lg leading-relaxed mb-8"
             >
               Nestled in the heart of Kerala&apos;s Venice of the East, Akalappuzha Tourism 
               offers an unparalleled journey through the mystical backwaters. Our fleet of 
@@ -122,7 +122,7 @@ export function ExperienceSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[#7ab8d4] text-base sm:text-lg leading-relaxed mb-8 sm:mb-12 hidden sm:block"
+              className="text-[#7ab8d4] text-lg leading-relaxed mb-12"
             >
               Watch fishermen cast their nets, children playing on the banks, and 
               experience the rhythm of life that has remained unchanged for centuries. 
@@ -133,17 +133,17 @@ export function ExperienceSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-wrap gap-4 sm:gap-6 mb-8 sm:mb-12"
+              className="flex flex-wrap gap-6 mb-12"
             >
               {[
                 { icon: Waves, text: "Serene Waters" },
                 { icon: Sparkles, text: "Authentic Experience" },
               ].map((item, index) => (
-                <div key={index} className="flex items-center gap-2 sm:gap-3">
-                  <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full border border-[#00A8E8]/30 flex items-center justify-center">
-                    <item.icon className="w-3 sm:w-4 h-3 sm:h-4 text-[#00A8E8]" />
+                <div key={index} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full border border-[#00A8E8]/30 flex items-center justify-center">
+                    <item.icon className="w-4 h-4 text-[#00A8E8]" />
                   </div>
-                  <span className="text-white/80 text-xs sm:text-sm">{item.text}</span>
+                  <span className="text-white/80 text-sm">{item.text}</span>
                 </div>
               ))}
             </motion.div>
@@ -152,7 +152,7 @@ export function ExperienceSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -162,10 +162,10 @@ export function ExperienceSection() {
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   className="text-center sm:text-left"
                 >
-                  <p className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#00A8E8] mb-1">
+                  <p className="font-serif text-3xl lg:text-4xl text-[#00A8E8] mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-[10px] sm:text-xs text-[#7ab8d4] tracking-wider uppercase">
+                  <p className="text-xs text-[#7ab8d4] tracking-wider uppercase">
                     {stat.label}
                   </p>
                 </motion.div>
