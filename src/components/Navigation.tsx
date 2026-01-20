@@ -42,29 +42,29 @@ export function Navigation() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20 lg:h-24">
-            <motion.a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("#hero");
-              }}
-              className="flex items-center gap-3 group"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="w-10 h-10 rounded-full border border-[#00A8E8]/50 flex items-center justify-center group-hover:border-[#CFFFFF] group-hover:shadow-[0_0_20px_rgba(0,168,232,0.3)] transition-all duration-300">
-                <Anchor className="w-5 h-5 text-[#00A8E8] group-hover:text-[#CFFFFF] transition-colors" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-xl lg:text-2xl tracking-wide text-white">
-                  Akalappuzha
-                </span>
-                <span className="text-[10px] lg:text-xs tracking-[0.3em] text-[#00A8E8]/70 uppercase">
-                  Tourism
-                </span>
-              </div>
-            </motion.a>
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
+              <motion.a
+                href="#hero"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#hero");
+                }}
+                className="flex items-center gap-2 sm:gap-3 group"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#00A8E8]/50 flex items-center justify-center group-hover:border-[#CFFFFF] group-hover:shadow-[0_0_20px_rgba(0,168,232,0.3)] transition-all duration-300">
+                  <Anchor className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A8E8] group-hover:text-[#CFFFFF] transition-colors" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-serif text-lg sm:text-xl lg:text-2xl tracking-wide text-white">
+                    Akalappuzha
+                  </span>
+                  <span className="text-[8px] sm:text-[10px] lg:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-[#00A8E8]/70 uppercase">
+                    Tourism
+                  </span>
+                </div>
+              </motion.a>
 
             <div className="hidden lg:flex items-center gap-12">
               {navItems.map((item, index) => (
@@ -99,16 +99,17 @@ export function Navigation() {
               </motion.a>
             </div>
 
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden w-12 h-12 flex items-center justify-center"
-            >
-              {isOpen ? (
-                <X className="w-6 h-6 text-white" />
-              ) : (
-                <Menu className="w-6 h-6 text-white" />
-              )}
-            </button>
+<button
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center touch-manipulation"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? (
+                  <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                ) : (
+                  <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                )}
+              </button>
           </div>
         </div>
       </motion.nav>
@@ -122,39 +123,39 @@ export function Navigation() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 wet-glass lg:hidden"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8">
-              {navItems.map((item, index) => (
+<div className="flex flex-col items-center justify-center h-full gap-6 sm:gap-8 px-6">
+                {navItems.map((item, index) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.href);
+                    }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 30 }}
+                    transition={{ delay: index * 0.1, duration: 0.4 }}
+                    className="font-serif text-2xl sm:text-3xl text-white hover:text-[#CFFFFF] transition-colors touch-manipulation"
+                  >
+                    {item.name}
+                  </motion.a>
+                ))}
                 <motion.a
-                  key={item.name}
-                  href={item.href}
+                  href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick(item.href);
+                    handleNavClick("#contact");
                   }}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 30 }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  className="font-serif text-3xl text-white hover:text-[#CFFFFF] transition-colors"
+                  transition={{ delay: 0.5, duration: 0.4 }}
+                  className="mt-4 px-6 sm:px-8 py-3 border border-[#00A8E8] text-[#00A8E8] text-base sm:text-lg tracking-wider hover:bg-[#00A8E8] hover:text-[#051923] transition-all duration-300 touch-manipulation"
                 >
-                  {item.name}
+                  Book Now
                 </motion.a>
-              ))}
-              <motion.a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick("#contact");
-                }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 30 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-                className="mt-4 px-8 py-3 border border-[#00A8E8] text-[#00A8E8] text-lg tracking-wider hover:bg-[#00A8E8] hover:text-[#051923] transition-all duration-300"
-              >
-                Book Now
-              </motion.a>
-            </div>
+              </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -271,3 +271,36 @@ html {
 nextjs-portal {
   display: none !important;
 }
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .submerged-glow::before {
+    inset: -10px;
+    filter: blur(10px);
+  }
+  
+  .grain-overlay {
+    opacity: 0.01;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
