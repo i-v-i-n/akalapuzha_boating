@@ -35,8 +35,8 @@ export function BubbleCursor() {
       setIsVisible(false);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseleave", handleMouseLeave);
+   // window.addEventListener("mousemove", handleMouseMove);
+    //document.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
