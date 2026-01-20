@@ -27,15 +27,15 @@ export function ExperienceSection() {
     <section
       ref={containerRef}
       id="experience"
-      className="relative py-32 lg:py-48 bg-[#051923] overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-48 bg-[#051923] overflow-hidden"
     >
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00A8E8]/20 rounded-full blur-[100px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#007EA7]/20 rounded-full blur-[100px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           <motion.div
             style={{ y: y1 }}
             className="relative"
