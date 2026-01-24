@@ -58,7 +58,23 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    
+    const message = `*New Booking Inquiry*
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Date:* ${formData.date}
+*Guests:* ${formData.guests}
+*Boat Type:* ${formData.boatType}
+*Message:* ${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    // Using the phone number from contactInfo, cleaned for WhatsApp URL
+    const whatsappNumber = "914772253308"; 
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, "_blank");
   };
 
   const handleChange = (
