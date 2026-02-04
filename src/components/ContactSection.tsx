@@ -71,7 +71,7 @@ export function ContactSection() {
 
     const encodedMessage = encodeURIComponent(message);
     // Using the phone number from contactInfo, cleaned for WhatsApp URL
-    const whatsappNumber = "914772253308"; 
+    const whatsappNumber = "+918590775657"; 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
     window.open(whatsappUrl, "_blank");
