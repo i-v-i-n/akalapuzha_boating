@@ -15,7 +15,7 @@ const services = [
     features: ["Overnight Stays", "Traditional Cuisine", "AC Rooms", "Sundeck Views"],
     capacity: "2-14 Guests",
     duration: "12-21 Hours",
-    images: ["/houseboat.png", "/boat.jpeg", "/inside.png", "/kaayal.png"],
+    images: ["/color.png", "/boat.jpeg", "/inside.png", "/kaayal.png"],
   },
   {
     id: "shikara",
@@ -146,8 +146,8 @@ export function ServicesSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[#7ab8d4] text-base sm:text-lg max-w-2xl mx-auto px-4"
             >
-                From luxurious overnight houseboat experiences to intimate shikara rides
-                through hidden canals, we have the perfect vessel for your journey.
+              From luxurious overnight houseboat experiences to intimate shikara rides 
+              through hidden canals, we have the perfect vessel for every journey.
             </motion.p>
           </div>
 
@@ -199,10 +199,18 @@ export function ServicesSection() {
             className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16"
           >
             <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] overflow-hidden submerged-glow">
-                <ImageCarousel images={activeData.images} name={activeData.name} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a2a3d] via-transparent to-transparent pointer-events-none" />
+              <motion.img
+                key={activeData.image}
+                initial={{ scale: 1.1, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                src={activeData.image}
+                alt={activeData.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2a3d] via-transparent to-transparent" />
 
-                <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 flex flex-wrap gap-2 sm:gap-4 pointer-events-none">
+                <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 flex flex-wrap gap-2 sm:gap-4">
                   <div className="flex-1 min-w-[80px] p-2 sm:p-4 glass-card">
                     <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
                       <Users className="w-3 h-3 sm:w-4 sm:h-4 text-[#00A8E8]" />
@@ -218,7 +226,7 @@ export function ServicesSection() {
                     <p className="text-white text-xs sm:text-sm font-medium">{activeData.duration}</p>
                   </div>
                 </div>
-              </div>
+            </div>
 
             <div className="flex flex-col justify-center">
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white mb-4 sm:mb-6">
