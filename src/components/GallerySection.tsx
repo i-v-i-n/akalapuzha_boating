@@ -4,19 +4,18 @@ import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const initialImages = [
-  { src: "/a1.png", alt: "Backwaters View", span: "col-span-2 row-span-2" },
-  { src: "/boats.png", alt: "Traditional Boats", span: "col-span-1 row-span-1" },
-  { src: "/canoe.png", alt: "Canoe Ride", span: "col-span-1 row-span-1" },
-  { src: "/canoe2.png", alt: "Canoe Adventure", span: "col-span-1 row-span-2 hidden sm:block" },
-  { src: "/houseboat.png", alt: "Houseboat", span: "col-span-1 row-span-1" },
-  { src: "/island.png", alt: "Island View", span: "col-span-1 row-span-1" },
+  { src: "/a1.png", span: "col-span-2 row-span-2" },
+  { src: "/boats.png", span: "col-span-1 row-span-1" },
+  { src: "/canoe.png", span: "col-span-1 row-span-1" },
+  { src: "/canoe2.png", span: "col-span-1 row-span-2 hidden sm:block" },
+  { src: "/island.png", span: "col-span-1 row-span-1" },
 ];
 
 const expandedImages = [
-  { src: "/kaayal.png", alt: "Kaayal Waters", span: "col-span-1 row-span-1" },
-  { src: "/piller.png", alt: "Heritage Pillar", span: "col-span-1 row-span-1" },
-  { src: "/road.png", alt: "Scenic Road", span: "col-span-1 row-span-1" },
-  { src: "/thoni.png", alt: "Traditional Thoni", span: "col-span-1 row-span-1" },
+  { src: "/kaayal.png", span: "col-span-1 row-span-1" },
+  { src: "/piller.png", span: "col-span-1 row-span-1" },
+  { src: "/road.png",  span: "col-span-1 row-span-1" },
+  { src: "/thoni.png", span: "col-span-1 row-span-1" },
 ];
 
 export function GallerySection() {

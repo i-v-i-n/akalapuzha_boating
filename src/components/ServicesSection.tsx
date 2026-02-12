@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Ship, Sailboat, Users, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Ship, Sailboat, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 const services = [
   {
@@ -202,22 +202,7 @@ export function ServicesSection() {
                 <ImageCarousel images={activeData.images} name={activeData.name} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a2a3d] via-transparent to-transparent" />
 
-                <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 flex flex-wrap gap-2 sm:gap-4">
-                  <div className="flex-1 min-w-[80px] p-2 sm:p-4 glass-card">
-                    <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
-                      <Users className="w-3 h-3 sm:w-4 sm:h-4 text-[#00A8E8]" />
-                      <span className="text-[8px] sm:text-xs text-[#7ab8d4] uppercase tracking-wider">Capacity</span>
-                    </div>
-                    <p className="text-white text-xs sm:text-sm font-medium">{activeData.capacity}</p>
-                  </div>
-                  <div className="flex-1 min-w-[80px] p-2 sm:p-4 glass-card">
-                    <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
-                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-[#00A8E8]" />
-                      <span className="text-[8px] sm:text-xs text-[#7ab8d4] uppercase tracking-wider">Duration</span>
-                    </div>
-                    <p className="text-white text-xs sm:text-sm font-medium">{activeData.duration}</p>
-                  </div>
-                </div>
+
             </div>
 
             <div className="flex flex-col justify-center">
