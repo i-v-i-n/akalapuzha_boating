@@ -15,7 +15,7 @@ const services = [
     features: ["Overnight Stays", "Traditional Cuisine", "AC Rooms", "Sundeck Views"],
     capacity: "2-14 Guests",
     duration: "12-21 Hours",
-    images: ["/color.png", "/boat.jpeg", "/inside.png", "/kaayal.png"],
+    images: ["/boat.jpeg", "/inside.png"],
   },
   {
     id: "shikara",
@@ -27,7 +27,7 @@ const services = [
     features: ["Village Tours", "Bird Watching", "Sunset Rides", "Flexible Timing"],
     capacity: "4-15 Guests",
     duration: "1-4 Hours",
-    images: ["/canoe.png", "/canoe2.png", "/thoni.png", "/boats.png"],
+    images: ["/ext.png", "/color.png"],
   },
 ];
 
@@ -199,15 +199,7 @@ export function ServicesSection() {
             className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16"
           >
             <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] overflow-hidden submerged-glow">
-              <motion.img
-                key={activeData.image}
-                initial={{ scale: 1.1, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                src={activeData.image}
-                alt={activeData.name}
-                className="w-full h-full object-cover"
-              />
+                <ImageCarousel images={activeData.images} name={activeData.name} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a2a3d] via-transparent to-transparent" />
 
                 <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 flex flex-wrap gap-2 sm:gap-4">
