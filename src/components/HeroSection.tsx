@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const Hero3D = dynamic(
@@ -107,16 +107,16 @@ export function HeroSection() {
                 <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </motion.button>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="group px-6 sm:px-8 py-3 sm:py-4 glass-card text-white font-medium tracking-wider flex items-center justify-center gap-3 hover:border-[#00A8E8]/50 transition-all duration-300 touch-manipulation text-sm sm:text-base"
-              >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#00A8E8]/50 flex items-center justify-center group-hover:border-[#CFFFFF] group-hover:shadow-[0_0_20px_rgba(0,168,232,0.3)] transition-all duration-300">
-                  <Play className="w-3 h-3 sm:w-4 sm:h-4 ml-0.5 text-[#00A8E8]" />
-                </div>
-                Watch Journey
-              </motion.button>
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  href="/Kairali-Cruise.pdf"
+                  download
+                  className="group px-6 sm:px-8 py-3 sm:py-4 glass-card text-white font-medium tracking-wider flex items-center justify-center gap-3 hover:border-[#00A8E8]/50 transition-all duration-300 touch-manipulation text-sm sm:text-base"
+                >
+                  <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A8E8]" />
+                  Download Brochure
+                </motion.a>
             </motion.div>
           </div>
         </div>

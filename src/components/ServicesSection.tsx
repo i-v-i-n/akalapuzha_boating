@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Ship, Sailboat, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Ship, Sailboat, Users, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 const services = [
   {
