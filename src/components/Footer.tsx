@@ -7,16 +7,12 @@ const footerLinks = {
   services: [
     { name: "Houseboats", href: "#services" },
     { name: "Shikara Boats", href: "#services" },
-    { name: "Speedboats", href: "#services" },
-    { name: "Canoe Rides", href: "#services" },
-    { name: "Packages", href: "#services" },
   ],
   company: [
     { name: "About Us", href: "#experience" },
     { name: "Our Fleet", href: "#services" },
     { name: "Gallery", href: "#gallery" },
     { name: "Contact", href: "#contact" },
-    { name: "Careers", href: "#" },
   ],
   support: [
     { name: "FAQ", href: "#" },

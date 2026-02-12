@@ -107,16 +107,22 @@ export function HeroSection() {
                 <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </motion.button>
 
-                <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  href="/Kairali-Cruise.pdf"
-                  download
-                  className="group px-6 sm:px-8 py-3 sm:py-4 glass-card text-white font-medium tracking-wider flex items-center justify-center gap-3 hover:border-[#00A8E8]/50 transition-all duration-300 touch-manipulation text-sm sm:text-base"
-                >
-                  <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A8E8]" />
-                  Download Brochure
-                </motion.a>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => {
+                      const link = document.createElement("a");
+                      link.href = "/Kairali-Cruise.pdf";
+                      link.download = "Kairali-Cruise.pdf";
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                    className="group px-6 sm:px-8 py-3 sm:py-4 glass-card text-white font-medium tracking-wider flex items-center justify-center gap-3 hover:border-[#00A8E8]/50 transition-all duration-300 touch-manipulation text-sm sm:text-base"
+                  >
+                    <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A8E8]" />
+                    Download Brochure
+                  </motion.button>
             </motion.div>
           </div>
         </div>
