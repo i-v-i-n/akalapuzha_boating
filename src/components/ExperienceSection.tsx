@@ -5,13 +5,13 @@ import { motion, useScroll, useTransform, useInView, AnimatePresence } from "fra
 import { Compass, Waves, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
 const carouselImages = [
-  { src: "/a1.png", alt: "Kerala Backwaters" },
-  { src: "/boats.png", alt: "Traditional Boats" },
-  { src: "/canoe.png", alt: "Canoe Experience" },
-  { src: "/canoe2.png", alt: "Canoe Adventure" },
-  { src: "/houseboat.png", alt: "Houseboat" },
-  { src: "/island.png", alt: "Island View" },
-  { src: "/kaayal.png", alt: "Kaayal Waters" },
+  { src: "/a1.png", alt: "Kerala Backwaters", duration: 5000 },
+  { src: "/boats.png", alt: "Traditional Boats", duration: 4000 },
+  { src: "/canoe.png", alt: "Canoe Experience", duration: 4500 },
+  { src: "/canoe2.png", alt: "Canoe Adventure", duration: 4000 },
+  { src: "/houseboat.png", alt: "Houseboat", duration: 5500 },
+  { src: "/island.png", alt: "Island View", duration: 5000 },
+  { src: "/kaayal.png", alt: "Kaayal Waters", duration: 4500 },
 ];
 
 const stats = [
@@ -45,83 +45,87 @@ export function ExperienceSection() {
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-    const interval = setInterval(nextSlide, 4000);
+    
+    // Use the duration specific to the current image
+    const currentDuration = carouselImages[currentIndex].duration;
+    const interval = setInterval(nextSlide, currentDuration);
+    
     return () => clearInterval(interval);
-  }, [isAutoPlaying, nextSlide]);
+  }, [isAutoPlaying, nextSlide, currentIndex]);
 
   return (
-<section
-        ref={containerRef}
-        id="experience"
-        className="relative py-16 sm:py-24 lg:py-32 xl:py-48 bg-[#051923] overflow-hidden"
-      >
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#00A8E8]/20 rounded-full blur-[60px] sm:blur-[80px] lg:blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#007EA7]/20 rounded-full blur-[60px] sm:blur-[80px] lg:blur-[100px]" />
-        </div>
+    <section
+      ref={containerRef}
+      id="experience"
+      className="relative py-16 sm:py-24 lg:py-32 xl:py-48 bg-[#051923] overflow-hidden"
+    >
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#00A8E8]/20 rounded-full blur-[60px] sm:blur-[80px] lg:blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#007EA7]/20 rounded-full blur-[60px] sm:blur-[80px] lg:blur-[100px]" />
+      </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 xl:gap-24 items-center">
-<motion.div
-              style={{ y: y1 }}
-              className="relative order-2 lg:order-1"
+          <motion.div
+            style={{ y: y1 }}
+            className="relative order-2 lg:order-1"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden submerged-glow"
+              onMouseEnter={() => setIsAutoPlaying(false)}
+              onMouseLeave={() => setIsAutoPlaying(true)}
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden submerged-glow"
-                onMouseEnter={() => setIsAutoPlaying(false)}
-                onMouseLeave={() => setIsAutoPlaying(true)}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={currentIndex}
-                    src={carouselImages[currentIndex].src}
-                    alt={carouselImages[currentIndex].alt}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-full h-full object-cover absolute inset-0"
-                  />
-                </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#051923] via-transparent to-transparent" />
-                
-                {/* Carousel Controls */}
-                <div className="absolute inset-0 flex items-center justify-between px-2 sm:px-4 z-10">
-                  <button
-                    onClick={prevSlide}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#051923]/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#00A8E8]/40 transition-all touch-manipulation"
-                    aria-label="Previous image"
-                  >
-                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </button>
-                  <button
-                    onClick={nextSlide}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#051923]/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#00A8E8]/40 transition-all touch-manipulation"
-                    aria-label="Next image"
-                  >
-                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </button>
-                </div>
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentIndex}
+                  src={carouselImages[currentIndex].src}
+                  alt={carouselImages[currentIndex].alt}
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="w-full h-full object-cover absolute inset-0"
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#051923] via-transparent to-transparent" />
+              
+              {/* Carousel Controls */}
+              <div className="absolute inset-0 flex items-center justify-between px-2 sm:px-4 z-10">
+                <button
+                  onClick={prevSlide}
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#051923]/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#00A8E8]/40 transition-all touch-manipulation"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#051923]/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#00A8E8]/40 transition-all touch-manipulation"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
 
-                {/* Dots Indicator */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                  {carouselImages.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-all touch-manipulation ${
-                        index === currentIndex
-                          ? "bg-[#00A8E8] w-6"
-                          : "bg-white/40 hover:bg-white/60"
-                      }`}
-                      aria-label={`Go to image ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </motion.div>
+              {/* Dots Indicator */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {carouselImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all touch-manipulation ${
+                      index === currentIndex
+                        ? "bg-[#00A8E8] w-6"
+                        : "bg-white/40 hover:bg-white/60"
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
