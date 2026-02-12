@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
-import { Ship, Sailboat, Zap, Users, Clock, IndianRupee, ArrowRight } from "lucide-react";
+import { useRef, useState, useEffect, useCallback } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { Ship, Sailboat, Users, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 const services = [
   {
@@ -13,10 +13,9 @@ const services = [
     description:
       "Experience the ultimate backwater journey aboard our traditional kettuvallams. Complete with modern amenities, private bedrooms, and authentic Kerala cuisine prepared by onboard chefs.",
     features: ["Overnight Stays", "Traditional Cuisine", "AC Rooms", "Sundeck Views"],
-    pricing: "From ₹8,000/day",
     capacity: "2-14 Guests",
     duration: "12-21 Hours",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop",
+    images: ["/houseboat.png", "/boat.jpeg", "/inside.png", "/kaayal.png"],
   },
   {
     id: "shikara",
@@ -26,25 +25,70 @@ const services = [
     description:
       "Navigate through narrow canals and village waterways that larger boats cannot reach. Perfect for photography enthusiasts and those seeking authentic local experiences.",
     features: ["Village Tours", "Bird Watching", "Sunset Rides", "Flexible Timing"],
-    pricing: "From ₹500/hour",
     capacity: "4-15 Guests",
     duration: "1-4 Hours",
-    image: "https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    id: "speedboat",
-    icon: Zap,
-    name: "Speedboats",
-    tagline: "Thrilling Adventure",
-    description:
-      "For those who crave excitement, our speedboats offer exhilarating rides across the expansive backwaters. Feel the wind and spray as you race through Kerala's waterways.",
-    features: ["Quick Transfers", "Water Sports", "Group Events", "Island Hopping"],
-    pricing: "From ₹900/20min",
-    capacity: "3-6 Guests",
-    duration: "20-60 Minutes",
-    image: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=2044&auto=format&fit=crop",
+    images: ["/canoe.png", "/canoe2.png", "/thoni.png", "/boats.png"],
   },
 ];
+
+function ImageCarousel({ images, name }: { images: string[]; name: string }) {
+  const [current, setCurrent] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  const prev = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(next, 4000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  return (
+    <div className="relative w-full h-full group">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={images[current]}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          src={images[current]}
+          alt={`${name} ${current + 1}`}
+          className="w-full h-full object-cover absolute inset-0"
+        />
+      </AnimatePresence>
+
+      <button
+        onClick={prev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full glass-card flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 touch-manipulation z-10"
+      >
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full glass-card flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 touch-manipulation z-10"
+      >
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+      </button>
+
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 touch-manipulation ${
+              i === current ? "bg-[#00A8E8] w-4 sm:w-5" : "bg-white/40"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function ServicesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -102,8 +146,8 @@ export function ServicesSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[#7ab8d4] text-base sm:text-lg max-w-2xl mx-auto px-4"
             >
-              From luxurious overnight houseboat experiences to intimate shikara rides 
-              through hidden canals, we have the perfect vessel for every journey.
+                From luxurious overnight houseboat experiences to intimate shikara rides
+                through hidden canals, we have the perfect vessel for your journey.
             </motion.p>
           </div>
 
@@ -155,41 +199,26 @@ export function ServicesSection() {
             className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16"
           >
             <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] overflow-hidden submerged-glow">
-              <motion.img
-                key={activeData.image}
-                initial={{ scale: 1.1, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                src={activeData.image}
-                alt={activeData.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2a3d] via-transparent to-transparent" />
+                <ImageCarousel images={activeData.images} name={activeData.name} />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a2a3d] via-transparent to-transparent pointer-events-none" />
 
-              <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 flex flex-wrap gap-2 sm:gap-4">
-                <div className="flex-1 min-w-[80px] p-2 sm:p-4 glass-card">
-                  <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
-                    <IndianRupee className="w-3 h-3 sm:w-4 sm:h-4 text-[#00A8E8]" />
-                    <span className="text-[8px] sm:text-xs text-[#7ab8d4] uppercase tracking-wider">Pricing</span>
+                <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 flex flex-wrap gap-2 sm:gap-4 pointer-events-none">
+                  <div className="flex-1 min-w-[80px] p-2 sm:p-4 glass-card">
+                    <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                      <Users className="w-3 h-3 sm:w-4 sm:h-4 text-[#00A8E8]" />
+                      <span className="text-[8px] sm:text-xs text-[#7ab8d4] uppercase tracking-wider">Capacity</span>
+                    </div>
+                    <p className="text-white text-xs sm:text-sm font-medium">{activeData.capacity}</p>
                   </div>
-                  <p className="text-white text-xs sm:text-sm font-medium">{activeData.pricing}</p>
-                </div>
-                <div className="flex-1 min-w-[80px] p-2 sm:p-4 glass-card">
-                  <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
-                    <Users className="w-3 h-3 sm:w-4 sm:h-4 text-[#00A8E8]" />
-                    <span className="text-[8px] sm:text-xs text-[#7ab8d4] uppercase tracking-wider">Capacity</span>
+                  <div className="flex-1 min-w-[80px] p-2 sm:p-4 glass-card">
+                    <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-[#00A8E8]" />
+                      <span className="text-[8px] sm:text-xs text-[#7ab8d4] uppercase tracking-wider">Duration</span>
+                    </div>
+                    <p className="text-white text-xs sm:text-sm font-medium">{activeData.duration}</p>
                   </div>
-                  <p className="text-white text-xs sm:text-sm font-medium">{activeData.capacity}</p>
-                </div>
-                <div className="flex-1 min-w-[80px] p-2 sm:p-4 glass-card">
-                  <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1">
-                    <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-[#00A8E8]" />
-                    <span className="text-[8px] sm:text-xs text-[#7ab8d4] uppercase tracking-wider">Duration</span>
-                  </div>
-                  <p className="text-white text-xs sm:text-sm font-medium">{activeData.duration}</p>
                 </div>
               </div>
-            </div>
 
             <div className="flex flex-col justify-center">
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white mb-4 sm:mb-6">
