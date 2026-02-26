@@ -58,7 +58,7 @@ export function Navigation() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-serif text-lg sm:text-xl lg:text-2xl tracking-wide text-white">
-                    Akalappuzha
+                    Akalapuzha
                   </span>
                   <span className="text-[8px] sm:text-[10px] lg:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-[#00A8E8]/70 uppercase">
                     Tourism

@@ -201,6 +201,8 @@ export function ServicesSection() {
             <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] overflow-hidden submerged-glow">
                 <ImageCarousel images={activeData.images} name={activeData.name} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a2a3d] via-transparent to-transparent" />
+
+
             </div>
 
             <div className="flex flex-col justify-center">

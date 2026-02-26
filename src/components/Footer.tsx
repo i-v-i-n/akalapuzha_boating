@@ -7,16 +7,12 @@ const footerLinks = {
   services: [
     { name: "Houseboats", href: "#services" },
     { name: "Shikara Boats", href: "#services" },
-    { name: "Speedboats", href: "#services" },
-    { name: "Canoe Rides", href: "#services" },
-    { name: "Packages", href: "#services" },
   ],
   company: [
     { name: "About Us", href: "#experience" },
     { name: "Our Fleet", href: "#services" },
     { name: "Gallery", href: "#gallery" },
     { name: "Contact", href: "#contact" },
-    { name: "Careers", href: "#" },
   ],
   support: [
     { name: "FAQ", href: "#" },
@@ -54,7 +50,7 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-xl sm:text-2xl tracking-wide text-white">
-                  Akalappuzha
+                  Akalapuzha
                 </span>
                 <span className="text-[8px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] text-[#00A8E8]/70 uppercase">
                   Tourism
@@ -140,7 +136,7 @@ export function Footer() {
 
         <div className="py-6 sm:py-8 border-t border-[#00A8E8]/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#7ab8d4] text-xs sm:text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} Akalappuzha Tourism. All rights reserved.
+            © {new Date().getFullYear()} Akalapuzha Tourism. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4 sm:gap-6">

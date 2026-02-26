@@ -17,21 +17,17 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Finishing Point, Akalappuzha, Kerala 688012",
+    value: "Finishing Point, Akalapuzha, Kerala 688012",
   },
   {
     icon: Phone,
     label: "Phone",
-<<<<<<< HEAD
     value: "+91 477 225 3308",
-=======
-    value: "+91 9846 474 400",
->>>>>>> master
   },
   {
     icon: Mail,
     label: "Email",
-    value: "info@akalappuzhatourism.com",
+    value: "info@akalapuzhatourism.com",
   },
   {
     icon: Clock,
@@ -43,12 +39,8 @@ const contactInfo = [
 const boatTypes = [
   { value: "houseboat", label: "Houseboat" },
   { value: "shikara", label: "Shikara Boat" },
-<<<<<<< HEAD
   { value: "speedboat", label: "Speedboat" },
   { value: "canoe", label: "Canoe" },
-=======
-
->>>>>>> master
 ];
 
 export function ContactSection() {
@@ -66,9 +58,6 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-<<<<<<< HEAD
-    console.log("Form submitted:", formData);
-=======
     
     const message = `*New Booking Inquiry*
 
@@ -82,11 +71,10 @@ export function ContactSection() {
 
     const encodedMessage = encodeURIComponent(message);
     // Using the phone number from contactInfo, cleaned for WhatsApp URL
-    const whatsappNumber = "+919846474400"; 
+    const whatsappNumber = "+918590775657"; 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
     window.open(whatsappUrl, "_blank");
->>>>>>> master
   };
 
   const handleChange = (

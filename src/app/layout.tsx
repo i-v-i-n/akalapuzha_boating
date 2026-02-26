@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Akalappuzha Tourism | Kerala Backwaters Experience",
+  title: "Akalapuzha Tourism | Kerala Backwaters Experience",
   description: "Experience the serene beauty of Kerala backwaters with our premium houseboat, shikara, and speedboat services in Alappuzha.",
 };
 

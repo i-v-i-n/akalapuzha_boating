@@ -1,10 +1,5 @@
 "use client";
 
-<<<<<<< HEAD
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { Compass, Waves, Sparkles } from "lucide-react";
-=======
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
 import { Compass, Waves, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
@@ -18,7 +13,6 @@ const carouselImages = [
   { src: "/island.png", alt: "Island View", duration: 5000 },
   { src: "/kaayal.png", alt: "Kaayal Waters", duration: 4500 },
 ];
->>>>>>> master
 
 const stats = [
   { value: "25+", label: "Years Experience" },
@@ -30,11 +24,8 @@ const stats = [
 export function ExperienceSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-<<<<<<< HEAD
-=======
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
->>>>>>> master
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -44,20 +35,6 @@ export function ExperienceSection() {
   const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
-<<<<<<< HEAD
-  return (
-<section
-        ref={containerRef}
-        id="experience"
-        className="relative py-16 sm:py-24 lg:py-32 xl:py-48 bg-[#051923] overflow-hidden"
-      >
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#00A8E8]/20 rounded-full blur-[60px] sm:blur-[80px] lg:blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-[#007EA7]/20 rounded-full blur-[60px] sm:blur-[80px] lg:blur-[100px]" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-=======
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % carouselImages.length);
   }, []);
@@ -88,7 +65,6 @@ export function ExperienceSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
->>>>>>> master
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 xl:gap-24 items-center">
           <motion.div
             style={{ y: y1 }}
@@ -99,15 +75,6 @@ export function ExperienceSection() {
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden submerged-glow"
-<<<<<<< HEAD
-            >
-              <img
-                src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop"
-                alt="Kerala Backwaters Experience"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#051923] via-transparent to-transparent" />
-=======
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
@@ -158,7 +125,6 @@ export function ExperienceSection() {
                   />
                 ))}
               </div>
->>>>>>> master
             </motion.div>
 
             <motion.div
@@ -199,7 +165,7 @@ export function ExperienceSection() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="inline-block text-[#00A8E8] text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6"
             >
-              About Akalappuzha Tourism
+              About Akalapuzha Tourism
             </motion.span>
 
             <motion.h2
@@ -219,7 +185,7 @@ export function ExperienceSection() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-[#7ab8d4] text-base sm:text-lg leading-relaxed mb-6 sm:mb-8"
             >
-              Nestled in the heart of Kerala&apos;s Venice of the East, Akalappuzha Tourism 
+              Nestled in the heart of Kerala&apos;s Venice of the East, Akalapuzha Tourism 
               offers an unparalleled journey through the mystical backwaters. Our fleet of 
               traditional houseboats, elegant shikaras, and modern speedboats provide the 
               perfect vessel for your adventure.
@@ -283,8 +249,4 @@ export function ExperienceSection() {
       </div>
     </section>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master
