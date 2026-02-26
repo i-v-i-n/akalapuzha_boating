@@ -2,7 +2,11 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+<<<<<<< HEAD
 import { ChevronDown, Play } from "lucide-react";
+=======
+import { ChevronDown, Download } from "lucide-react";
+>>>>>>> master
 import dynamic from "next/dynamic";
 
 const Hero3D = dynamic(
@@ -33,7 +37,11 @@ export function HeroSection() {
       className="relative h-screen w-full overflow-hidden bg-[#051923]"
     >
       <div className="absolute inset-0 surface-light pointer-events-none" />
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> master
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#007EA7]/20 via-transparent to-[#051923] z-10" />
@@ -55,7 +63,11 @@ export function HeroSection() {
 
       <motion.div
         style={{ opacity }}
+<<<<<<< HEAD
         className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 sm:px-6 lg:px-12"
+=======
+        className="absolute inset-0 flex flex-col items-center justify-center z-30 px-4 sm:px-6 lg:px-12 pointer-events-none"
+>>>>>>> master
       >
         <div className="flex flex-col items-center text-center gap-5 md:gap-0 md:items-start md:text-left md:max-w-7xl md:w-full">
           <div className="md:max-w-4xl">
@@ -95,18 +107,27 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+<<<<<<< HEAD
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto"
+=======
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto pointer-events-auto"
+>>>>>>> master
             >
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
+<<<<<<< HEAD
                 className="group px-6 sm:px-8 py-3 sm:py-4 bg-[#00A8E8] text-[#051923] font-medium tracking-wider flex items-center justify-center gap-3 hover:bg-[#CFFFFF] hover:shadow-[0_0_40px_rgba(0,168,232,0.5)] transition-all duration-300 touch-manipulation text-sm sm:text-base"
+=======
+                className="group px-6 sm:px-8 py-3 sm:py-4 bg-[#00A8E8] text-[#051923] font-medium tracking-wider flex items-center justify-center gap-3 hover:bg-[#CFFFFF] hover:shadow-[0_0_40px_rgba(0,168,232,0.5)] transition-all duration-300 touch-manipulation text-sm sm:text-base cursor-pointer"
+>>>>>>> master
               >
                 Explore Services
                 <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </motion.button>
 
+<<<<<<< HEAD
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -117,6 +138,20 @@ export function HeroSection() {
                 </div>
                 Watch Journey
               </motion.button>
+=======
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                href="/Kairali-Cruise.pdf"
+                download="Akalappuzha-Tourism-Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group px-6 sm:px-8 py-3 sm:py-4 glass-card text-white font-medium tracking-wider flex items-center justify-center gap-3 hover:border-[#00A8E8]/50 transition-all duration-300 touch-manipulation text-sm sm:text-base cursor-pointer"
+              >
+                <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A8E8]" />
+                Download Brochure
+              </motion.a>
+>>>>>>> master
             </motion.div>
           </div>
         </div>
@@ -140,13 +175,21 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
+<<<<<<< HEAD
         className="absolute bottom-8 w-full z-20 flex justify-center"
+=======
+        className="absolute bottom-8 w-full z-30 flex justify-center pointer-events-none"
+>>>>>>> master
       >
         <motion.button
           onClick={scrollToExperience}
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+<<<<<<< HEAD
           className="flex flex-col items-center gap-1 sm:gap-2 text-white/50 hover:text-[#CFFFFF] transition-colors touch-manipulation"
+=======
+          className="flex flex-col items-center gap-1 sm:gap-2 text-white/50 hover:text-[#CFFFFF] transition-colors touch-manipulation cursor-pointer pointer-events-auto"
+>>>>>>> master
         >
           <span className="text-[10px] sm:text-xs tracking-[0.2em] uppercase">Discover</span>
           <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -156,4 +199,8 @@ export function HeroSection() {
       <div className="grain-overlay" />
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

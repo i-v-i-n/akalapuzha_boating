@@ -22,7 +22,11 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
+<<<<<<< HEAD
     value: "+91 477 225 3308",
+=======
+    value: "+91 9846 474 400",
+>>>>>>> master
   },
   {
     icon: Mail,
@@ -39,8 +43,12 @@ const contactInfo = [
 const boatTypes = [
   { value: "houseboat", label: "Houseboat" },
   { value: "shikara", label: "Shikara Boat" },
+<<<<<<< HEAD
   { value: "speedboat", label: "Speedboat" },
   { value: "canoe", label: "Canoe" },
+=======
+
+>>>>>>> master
 ];
 
 export function ContactSection() {
@@ -58,7 +66,27 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+<<<<<<< HEAD
     console.log("Form submitted:", formData);
+=======
+    
+    const message = `*New Booking Inquiry*
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Date:* ${formData.date}
+*Guests:* ${formData.guests}
+*Boat Type:* ${formData.boatType}
+*Message:* ${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    // Using the phone number from contactInfo, cleaned for WhatsApp URL
+    const whatsappNumber = "+919846474400"; 
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, "_blank");
+>>>>>>> master
   };
 
   const handleChange = (
