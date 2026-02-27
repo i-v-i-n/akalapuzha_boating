@@ -1,0 +1,134 @@
+2026-02-26T18:43:29.654Z [console][error] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+2026-02-26T18:43:29.657Z [console][error] [Fast Refresh] performing full reload because your application had an unrecoverable error
+2026-02-26T18:43:29.658Z [console][warn] [Fast Refresh] done in 1326ms
+2026-02-26T18:43:29.957Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:30.173Z [console][warn] [Fast Refresh] done in 317ms
+2026-02-26T18:43:56.731Z [console][warn] [HMR] connected
+2026-02-26T18:43:19.025Z [console][debug] __ORCHIDS_NAVIGATE__ http://localhost:3000/
+2026-02-26T18:43:19.064Z [console][warn] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+2026-02-26T18:43:28.380Z [console][log] [Fast Refresh] rebuilding
+2026-02-26T18:43:29.654Z [console][warn] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+2026-02-26T18:43:29.656Z [console][warn] [Fast Refresh] performing full reload because your application had an unrecoverable error
+2026-02-26T18:43:29.657Z [console][log] [Fast Refresh] done in 1326ms
+2026-02-26T18:43:29.958Z [console][log] [Fast Refresh] rebuilding
+2026-02-26T18:43:30.174Z [console][log] [Fast Refresh] done in 317ms
+2026-02-26T18:43:56.731Z [console][log] [HMR] connected
+2026-02-26T18:43:19.174Z [network][POST 200] /__nextjs_original-stack-frames
+  request: {"frames":[{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/66896_react-reconciler_c3d42042._.js","line1":395,"column1":54,"methodName":"$$$reconciler","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/66896_%40react-three_fiber_dist_f572a24f._.js","line1":298,"column1":239,"methodName":"createRenderer","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/66896_%40react-three_fiber_dist_f572a24f._.js","line1":1720,"column1":36,"methodName":"module evaluation","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":879,"column1":13,"methodName":"<unknown>","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":904,"column1":13,"methodName":"runModuleExecutionHooks","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":877,"column1":9,"methodName":"instantiateModule","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":830,"column1":12,"methodName":"getOrInstantiateModuleFromParent","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":238,"column1":20,"methodName":"DevContext.esmImport [as i]","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/66896_%40react-thr... [truncated]
+  response: [{"status":"rejected","reason":"[Error: Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/react-reconciler/cjs/react-reconciler.development.js) outside project (file:///C:/Users/Ivin%20Lyju/)\n\nDebug info:\n- Execution of project_trace_source_operation failed\n- Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/react-reconciler/cjs/react-reconciler.development.js) outside project (file:///C:/Users/Ivin%20Lyju/)] {\n  code: 'GenericFailure'\n}"},{"status":"rejected","reason":"[Error: Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/@react-three/fiber/dist/events-776716bd.esm.js) outside project (file:///C:/Users/Ivin%20Lyju/)\n\nDebug info:\n- Execution of project_trace_source_operation failed\n- Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/@react-three/fiber/dist/events-776716bd.esm.js) outside project (file:///C:/Users/Ivin%20Lyju/)] {\n  code: 'GenericFailure'\n}"},{"status":"rejected","reason":"[Error: Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/@react-three/fiber/dist/events-776716bd.esm.js) outside project (file:///C:/Users/Ivin%20Lyju/)\n\nDebug info:\n- Execution of project_trace_source_operation failed\n- Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/@react-three/fiber/dist/events-776716bd.esm.js) outside project (file:///C:/Users/Ivin%20Lyju/)] {\n  code: 'GenericFailure'\n}"},{"status":"fulfilled","value":{"originalStackFrame":{"arguments":[],"file":"[turbopack]/browser/runtime/base/dev-base.ts","line1":244,"column1":7,"ignored":true,"methodName":"<unknown>"},"originalCodeFrame":null}},{"status":"fulfilled","value":{"originalStackFrame":{"arguments":[],"file":"[turbopack]/browser/runtime/base/dev-base.ts","line1":278,"column1":7,"ignored":true,"methodName":"runModuleEx... [truncated]
+2026-02-26T18:43:29.654Z [console][error] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+2026-02-26T18:43:29.657Z [console][error] [Fast Refresh] performing full reload because your application had an unrecoverable error
+2026-02-26T18:43:29.658Z [console][warn] [Fast Refresh] done in 1326ms
+2026-02-26T18:43:29.957Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:30.173Z [console][warn] [Fast Refresh] done in 317ms
+2026-02-26T18:43:56.731Z [console][warn] [HMR] connected
+2026-02-26T18:43:19.025Z [console][debug] __ORCHIDS_NAVIGATE__ http://localhost:3000/
+2026-02-26T18:43:19.064Z [console][warn] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+2026-02-26T18:43:28.380Z [console][log] [Fast Refresh] rebuilding
+2026-02-26T18:43:29.654Z [console][warn] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+2026-02-26T18:43:29.656Z [console][warn] [Fast Refresh] performing full reload because your application had an unrecoverable error
+2026-02-26T18:43:29.657Z [console][log] [Fast Refresh] done in 1326ms
+2026-02-26T18:43:29.958Z [console][log] [Fast Refresh] rebuilding
+2026-02-26T18:43:30.174Z [console][log] [Fast Refresh] done in 317ms
+2026-02-26T18:43:56.731Z [console][log] [HMR] connected
+2026-02-26T18:43:19.174Z [network][POST 200] /__nextjs_original-stack-frames
+  request: {"frames":[{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/66896_react-reconciler_c3d42042._.js","line1":395,"column1":54,"methodName":"$$$reconciler","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/66896_%40react-three_fiber_dist_f572a24f._.js","line1":298,"column1":239,"methodName":"createRenderer","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/66896_%40react-three_fiber_dist_f572a24f._.js","line1":1720,"column1":36,"methodName":"module evaluation","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":879,"column1":13,"methodName":"<unknown>","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":904,"column1":13,"methodName":"runModuleExecutionHooks","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":877,"column1":9,"methodName":"instantiateModule","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":830,"column1":12,"methodName":"getOrInstantiateModuleFromParent","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/turbopack-orchids-projects_orchids-boating-website_b6b718f3._.js","line1":238,"column1":20,"methodName":"DevContext.esmImport [as i]","arguments":[]},{"file":"file://C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/.next/dev/static/chunks/66896_%40react-thr... [truncated]
+  response: [{"status":"rejected","reason":"[Error: Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/react-reconciler/cjs/react-reconciler.development.js) outside project (file:///C:/Users/Ivin%20Lyju/)\n\nDebug info:\n- Execution of project_trace_source_operation failed\n- Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/react-reconciler/cjs/react-reconciler.development.js) outside project (file:///C:/Users/Ivin%20Lyju/)] {\n  code: 'GenericFailure'\n}"},{"status":"rejected","reason":"[Error: Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/@react-three/fiber/dist/events-776716bd.esm.js) outside project (file:///C:/Users/Ivin%20Lyju/)\n\nDebug info:\n- Execution of project_trace_source_operation failed\n- Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/@react-three/fiber/dist/events-776716bd.esm.js) outside project (file:///C:/Users/Ivin%20Lyju/)] {\n  code: 'GenericFailure'\n}"},{"status":"rejected","reason":"[Error: Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/@react-three/fiber/dist/events-776716bd.esm.js) outside project (file:///C:/Users/Ivin%20Lyju/)\n\nDebug info:\n- Execution of project_trace_source_operation failed\n- Original file (file:///C:/Users/Ivin Lyju/orchids-projects/orchids-boating-website/node_modules/@react-three/fiber/dist/events-776716bd.esm.js) outside project (file:///C:/Users/Ivin%20Lyju/)] {\n  code: 'GenericFailure'\n}"},{"status":"fulfilled","value":{"originalStackFrame":{"arguments":[],"file":"[turbopack]/browser/runtime/base/dev-base.ts","line1":244,"column1":7,"ignored":true,"methodName":"<unknown>"},"originalCodeFrame":null}},{"status":"fulfilled","value":{"originalStackFrame":{"arguments":[],"file":"[turbopack]/browser/runtime/base/dev-base.ts","line1":278,"column1":7,"ignored":true,"methodName":"runModuleEx... [truncated]
+2026-02-26T18:43:18.717Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:18.719Z [console][warn] [Fast Refresh] done in 104ms
+2026-02-26T18:43:18.888Z [console][warn] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+2026-02-26T18:43:18.934Z [console][warn] [HMR] connected
+2026-02-26T18:43:19.025Z [console][log] __ORCHIDS_NAVIGATE__ http://localhost:3000/
+2026-02-26T18:43:19.064Z [console][error] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+2026-02-26T18:43:19.154Z [console][error] Uncaught TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')
+2026-02-26T18:43:28.380Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:29.654Z [console][error] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+2026-02-26T18:43:29.657Z [console][error] [Fast Refresh] performing full reload because your application had an unrecoverable error
+2026-02-26T18:43:29.658Z [console][warn] [Fast Refresh] done in 1326ms
+2026-02-26T18:43:29.957Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:30.173Z [console][warn] [Fast Refresh] done in 317ms
+2026-02-26T18:43:56.731Z [console][warn] [HMR] connected
+2026-02-26T18:43:18.934Z [console][warn] [HMR] connected
+2026-02-26T18:43:19.025Z [console][log] __ORCHIDS_NAVIGATE__ http://localhost:3000/
+2026-02-26T18:43:19.064Z [console][error] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+2026-02-26T18:43:19.154Z [console][error] Uncaught TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')
+2026-02-26T18:43:28.380Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:29.654Z [console][error] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+2026-02-26T18:43:29.657Z [console][error] [Fast Refresh] performing full reload because your application had an unrecoverable error
+2026-02-26T18:43:29.658Z [console][warn] [Fast Refresh] done in 1326ms
+2026-02-26T18:43:29.957Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:30.173Z [console][warn] [Fast Refresh] done in 317ms
+2026-02-26T18:43:56.731Z [console][warn] [HMR] connected
+2026-02-26T18:45:05.717Z [console][warn] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+2026-02-26T18:45:05.832Z [console][warn] [HMR] connected
+2026-02-26T18:45:06.131Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:45:06.147Z [console][warn] [Fast Refresh] done in 142ms
+2026-02-26T18:43:19.154Z [console][error] Uncaught TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')
+2026-02-26T18:43:29.657Z [console][error] [Fast Refresh] performing full reload because your application had an unrecoverable error
+2026-02-26T18:43:18.717Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:18.719Z [console][warn] [Fast Refresh] done in 104ms
+2026-02-26T18:43:18.888Z [console][warn] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+2026-02-26T18:43:18.934Z [console][warn] [HMR] connected
+2026-02-26T18:43:19.025Z [console][log] __ORCHIDS_NAVIGATE__ http://localhost:3000/
+2026-02-26T18:43:19.064Z [console][error] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+2026-02-26T18:43:19.154Z [console][error] Uncaught TypeError: Cannot read properties of undefined (reading 'ReactCurrentOwner')
+2026-02-26T18:43:28.380Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:29.654Z [console][error] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree.
+2026-02-26T18:43:29.657Z [console][error] [Fast Refresh] performing full reload because your application had an unrecoverable error
+2026-02-26T18:43:29.658Z [console][warn] [Fast Refresh] done in 1326ms
+2026-02-26T18:43:29.957Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:43:30.173Z [console][warn] [Fast Refresh] done in 317ms
+2026-02-26T18:43:56.731Z [console][warn] [HMR] connected
+2026-02-26T18:45:05.717Z [console][warn] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+2026-02-26T18:45:05.832Z [console][warn] [HMR] connected
+2026-02-26T18:45:06.131Z [console][warn] [Fast Refresh] rebuilding
+2026-02-26T18:45:06.147Z [console][warn] [Fast Refresh] done in 142ms
