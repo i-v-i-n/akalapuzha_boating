@@ -3,12 +3,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Download } from "lucide-react";
-import dynamic from "next/dynamic";
-
-const Hero3D = dynamic(
-  () => import("./Hero3D").then((mod) => ({ default: mod.Hero3D })),
-  { ssr: false }
-);
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -46,8 +40,6 @@ export function HeroSection() {
 
       <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[400px] lg:w-[600px] h-[300px] sm:h-[400px] lg:h-[600px] bg-[#00A8E8]/10 rounded-full blur-[100px] sm:blur-[150px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[200px] sm:w-[300px] lg:w-[400px] h-[200px] sm:h-[300px] lg:h-[400px] bg-[#007EA7]/15 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
-
-      <Hero3D />
 
 <div className="absolute inset-0 z-20 pointer-events-none">
   <div className="absolute inset-0 bg-gradient-to-r from-[#051923]/80 via-transparent to-[#051923]/60" />
@@ -99,10 +91,11 @@ export function HeroSection() {
             >
               <button
                 onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
+                aria-label="Explore Services"
                 className="group px-6 sm:px-8 py-3 sm:py-4 bg-[#00A8E8] text-[#051923] font-medium tracking-wider flex items-center justify-center gap-3 hover:bg-[#CFFFFF] hover:shadow-[0_0_40px_rgba(0,168,232,0.5)] transition-all duration-300 active:scale-95 hover:scale-102 touch-manipulation text-sm sm:text-base cursor-pointer"
               >
                 Explore Services
-                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" aria-hidden="true" />
               </button>
 
               <button
@@ -121,9 +114,10 @@ export function HeroSection() {
                       window.open("/Kairali-Cruise.pdf", "_blank");
                   }
                 }}
+                aria-label="Download Brochure PDF"
                 className="group px-6 sm:px-8 py-3 sm:py-4 glass-card text-white font-medium tracking-wider flex items-center justify-center gap-3 hover:border-[#00A8E8]/50 transition-all duration-300 active:scale-95 hover:scale-102 touch-manipulation text-sm sm:text-base cursor-pointer"
               >
-                <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A8E8]" />
+                <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A8E8]" aria-hidden="true" />
                 Download Brochure
               </button>
             </motion.div>
@@ -155,10 +149,11 @@ export function HeroSection() {
           onClick={scrollToExperience}
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          aria-label="Scroll to Discover more"
           className="flex flex-col items-center gap-1 sm:gap-2 text-white/50 hover:text-[#CFFFFF] transition-colors touch-manipulation cursor-pointer"
         >
           <span className="text-[10px] sm:text-xs tracking-[0.2em] uppercase">Discover</span>
-          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
+          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
         </motion.button>
       </motion.div>
 

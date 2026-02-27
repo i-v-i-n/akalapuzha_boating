@@ -64,15 +64,17 @@ function ImageCarousel({ images, name }: { images: string[]; name: string }) {
 
       <button
         onClick={prev}
+        aria-label="Previous image"
         className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full glass-card flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 touch-manipulation z-10"
       >
-        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white" aria-hidden="true" />
       </button>
       <button
         onClick={next}
+        aria-label="Next image"
         className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full glass-card flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 touch-manipulation z-10"
       >
-        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" aria-hidden="true" />
       </button>
 
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
@@ -80,6 +82,7 @@ function ImageCarousel({ images, name }: { images: string[]; name: string }) {
           <button
             key={i}
             onClick={() => setCurrent(i)}
+            aria-label={`Go to image ${i + 1}`}
             className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 touch-manipulation ${
               i === current ? "bg-[#00A8E8] w-4 sm:w-5" : "bg-white/40"
             }`}
