@@ -4,18 +4,18 @@ import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const initialImages = [
-  { src: "/a1.png", span: "col-span-2 row-span-2" },
-  { src: "/boats.png", span: "col-span-1 row-span-1" },
-  { src: "/canoe.png", span: "col-span-1 row-span-1" },
-  { src: "/canoe2.png", span: "col-span-1 row-span-2 hidden sm:block" },
-  { src: "/island.png", span: "col-span-1 row-span-1" },
+  { src: "/a1.png", span: "col-span-2 row-span-2" ,alt:"A serene view of a traditional houseboat gliding through the tranquil backwaters, surrounded by lush greenery and swaying palm trees."},
+  { src: "/boats.png", span: "col-span-1 row-span-1" ,alt:"A vibrant scene of colorful boats docked along the banks of a bustling Kerala village, with locals going about their daily activities."},
+  { src: "/canoe.png", span: "col-span-1 row-span-1",alt:"A close-up shot of a traditional canoe navigating through narrow waterways, with reflections of the surrounding landscape shimmering on the water's surface."},
+  { src: "/canoe2.png", span: "col-span-1 row-span-2 hidden sm:block",alt:"A captivating image of a lone canoe drifting through misty backwaters at dawn, with soft light filtering through the trees and creating a mystical atmosphere."},
+  { src: "/island.png", span: "col-span-1 row-span-1",alt:"A picturesque view of a small island in the middle of the backwaters, adorned with vibrant greenery and a solitary palm tree, reflecting the untouched beauty of Kerala's waterways."},
 ];
 
 const expandedImages = [
-  { src: "/kaayal.png", span: "col-span-1 row-span-1" },
-  { src: "/piller.png", span: "col-span-1 row-span-1" },
-  { src: "/road.png",  span: "col-span-1 row-span-1" },
-  { src: "/thoni.png", span: "col-span-1 row-span-1" },
+  { src: "/kaayal.png", span: "col-span-1 row-span-1",alt:"A stunning aerial shot of the expansive backwaters, showcasing a network of waterways weaving through lush landscapes, dotted with traditional houseboats and vibrant greenery."},
+  { src: "/piller.png", span: "col-span-1 row-span-1",alt:"A serene view of a traditional houseboat anchored in a quiet corner of the backwaters, with gentle ripples reflecting the soft morning light." },
+  { src: "/road.png",  span: "col-span-1 row-span-1",alt:"A scenic view of a narrow road winding through lush greenery, leading towards the backwaters of Kerala." },
+  { src: "/thoni.png", span: "col-span-1 row-span-1",alt:"An enchanting image of a traditional fishing boat at sunset, casting a warm glow over the calm waters of the backwaters." },
 ];
 
 export function GallerySection() {
